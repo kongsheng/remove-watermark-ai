@@ -1,0 +1,25 @@
+{
+  "title": "Contact Us",
+  "subtitle": "We're here to help",
+  "form": {
+    "name": "Name",
+    "namePlaceholder": "Enter your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "Brief description of your issue",
+    "message": "Message",
+    "messagePlaceholder": "Please describe your issue or suggestion in detail...",
+    "submit": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "Failed to send, please try again"
+  },
+  "info": {
+    "title": "Other Contact Methods",
+    "email": "Email Support",
+    "emailValue": "support@watermark-remover.com",
+    "response": "Response Time",
+    "responseValue": "Within 24 hours"
+  }
+}

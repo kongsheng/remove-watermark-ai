@@ -1,0 +1,50 @@
+{
+  "title": "Terms of Service",
+  "lastUpdated": "Last Updated: January 2025",
+  "intro": "Welcome to our watermark removal tool. By using this service, you agree to the following terms and conditions.",
+  "cta": {
+    "text": "Start Using Tool"
+  },
+  "sections": {
+    "acceptance": {
+      "title": "1. Acceptance of Terms",
+      "content": "By accessing and using this website and its services, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use this service."
+    },
+    "serviceDescription": {
+      "title": "2. Service Description",
+      "content": "We provide a free online watermark removal tool. This service is provided as-is, and we reserve the right to modify or discontinue the service at any time without notice."
+    },
+    "userResponsibilities": {
+      "title": "3. User Responsibilities",
+      "content": "When using this service, you agree to:\n• Only process images you have legal rights to\n• Not use for illegal purposes or to infringe on others' rights\n• Comply with all applicable laws and regulations\n• Accept full responsibility for using this service"
+    },
+    "intellectualProperty": {
+      "title": "4. Intellectual Property",
+      "content": "You retain all rights to your uploaded images. We claim no rights to your content. The design, code, and content of this website are protected by intellectual property laws."
+    },
+    "disclaimer": {
+      "title": "5. Disclaimer",
+      "content": "This service is provided as-is, without any express or implied warranties. We do not guarantee the accuracy, reliability, or suitability of the service. Use this service at your own risk."
+    },
+    "limitation": {
+      "title": "6. Limitation of Liability",
+      "content": "To the maximum extent permitted by law, we are not liable for any direct, indirect, incidental, or consequential damages, including but not limited to data loss, loss of profits, or business interruption."
+    },
+    "modifications": {
+      "title": "7. Modifications to Terms",
+      "content": "We reserve the right to modify these terms at any time. Continued use of this service constitutes acceptance of the modified terms."
+    },
+    "termination": {
+      "title": "8. Termination",
+      "content": "We reserve the right to terminate or suspend your access to this service at any time without prior notice, for reasons including but not limited to violation of these terms."
+    },
+    "governing": {
+      "title": "9. Governing Law",
+      "content": "These terms are governed by the laws of the relevant jurisdiction. Any disputes arising from these terms shall be submitted to courts of competent jurisdiction."
+    },
+    "contact": {
+      "title": "10. Contact Information",
+      "content": "If you have any questions about these terms, please contact us through the contact page."
+    }
+  }
+}

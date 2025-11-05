@@ -1,0 +1,56 @@
+{
+  "upload": {
+    "title": "Upload Image",
+    "button": "Choose Image",
+    "dragHint": "or drag image here",
+    "support": "Supports JPG, PNG, WEBP and more"
+  },
+  "tools": {
+    "brushSize": "Brush Size",
+    "clearMask": "Clear Marks",
+    "removeWatermark": "Start Removing",
+    "download": "Download Result",
+    "reset": "Start Over"
+  },
+  "tips": {
+    "noImage": "Please upload an image first",
+    "noMask": "Please mark the area to remove first",
+    "processing": "Processing, please wait...",
+    "success": "Processing successful!",
+    "error": "Processing failed, please try again"
+  },
+  "features": {
+    "title": "Features",
+    "aiPowered": {
+      "title": "Smart Technology",
+      "desc": "Advanced image processing technology to intelligently identify and remove watermarks"
+    },
+    "easyToUse": {
+      "title": "Easy to Use",
+      "desc": "No professional skills required, mark with brush and process quickly"
+    },
+    "privacy": {
+      "title": "Privacy Protected",
+      "desc": "Images are only processed temporarily, not stored or used for other purposes"
+    },
+    "highQuality": {
+      "title": "High Quality Output",
+      "desc": "Maintains original image quality with natural and seamless results"
+    }
+  },
+  "steps": {
+    "title": "How to Use",
+    "step1": {
+      "title": "Upload Image",
+      "desc": "Select or drag the image you want to process"
+    },
+    "step2": {
+      "title": "Mark Watermark",
+      "desc": "Use brush to mark the watermark area to remove"
+    },
+    "step3": {
+      "title": "Download Result",
+      "desc": "Click process button, wait for completion and download"
+    }
+  }
+}

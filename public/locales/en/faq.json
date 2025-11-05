@@ -1,0 +1,42 @@
+{
+  "title": "Frequently Asked Questions",
+  "subtitle": "Answers to your questions about our watermark removal tool",
+  "cta": {
+    "text": "Have more questions?",
+    "button": "Contact Us"
+  },
+  "questions": {
+    "q1": {
+      "question": "Is this tool completely free?",
+      "answer": "Yes, our watermark removal tool is completely free to use, no registration or subscription required."
+    },
+    "q2": {
+      "question": "What image formats are supported?",
+      "answer": "We support common image formats including JPG, PNG, JPEG, WebP, and more."
+    },
+    "q3": {
+      "question": "Will the image quality decrease after processing?",
+      "answer": "We use advanced image processing algorithms to maintain original quality as much as possible. The quality depends on the complexity and location of the watermark."
+    },
+    "q4": {
+      "question": "Will my images be saved or shared?",
+      "answer": "No. All image processing is done locally in your browser. We do not save, store, or share your images."
+    },
+    "q5": {
+      "question": "Is there a file size limit?",
+      "answer": "To ensure optimal performance, we recommend uploading images no larger than 10MB."
+    },
+    "q6": {
+      "question": "How to get the best results?",
+      "answer": "Carefully mark the watermark area to ensure complete coverage. For complex backgrounds, you may process multiple times for better results."
+    },
+    "q7": {
+      "question": "Can I use it on mobile devices?",
+      "answer": "Yes! Our tool works on mobile device browsers, so you can use it anytime, anywhere."
+    },
+    "q8": {
+      "question": "What should I do if I encounter problems?",
+      "answer": "If you encounter any issues, please contact us through the contact page, and we'll resolve them as soon as possible."
+    }
+  }
+}

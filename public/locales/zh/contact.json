@@ -1,0 +1,25 @@
+{
+  "title": "联系我们",
+  "subtitle": "我们随时为您提供帮助",
+  "form": {
+    "name": "姓名",
+    "namePlaceholder": "请输入您的姓名",
+    "email": "邮箱",
+    "emailPlaceholder": "your@email.com",
+    "subject": "主题",
+    "subjectPlaceholder": "请简要描述您的问题",
+    "message": "留言",
+    "messagePlaceholder": "请详细描述您的问题或建议...",
+    "submit": "发送消息",
+    "sending": "发送中...",
+    "success": "消息发送成功！",
+    "error": "发送失败，请重试"
+  },
+  "info": {
+    "title": "其他联系方式",
+    "email": "邮箱支持",
+    "emailValue": "support@watermark-remover.com",
+    "response": "回复时间",
+    "responseValue": "24小时内回复"
+  }
+}

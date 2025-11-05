@@ -1,0 +1,43 @@
+{
+  "title": "About Us",
+  "subtitle": "Learn about our mission and vision",
+  "mission": {
+    "title": "Our Mission",
+    "content": "We are committed to providing users with simple, efficient, and professional image processing tools. Through advanced technology and exceptional user experience, we enable everyone to easily process images and enjoy a clean, watermark-free experience. We believe technology should make life better, not more complicated."
+  },
+  "story": {
+    "title": "Our Story",
+    "content": "Our team consists of passionate professionals with expertise in technology and design. We deeply understand the image processing challenges users face in their daily work and life. Therefore, we developed this smart watermark remover to make complex image processing simple and intuitive. Since 2024, we have helped thousands of users successfully process their images, earning widespread recognition and positive reviews. This positive feedback motivates us to continuously improve our product and provide better services to users."
+  },
+  "values": {
+    "title": "Core Values",
+    "quality": {
+      "title": "Quality First",
+      "desc": "We pursue excellence in product quality, ensuring every feature is rigorously tested"
+    },
+    "userFirst": {
+      "title": "User First",
+      "desc": "User needs drive us forward, we listen to every piece of feedback"
+    },
+    "privacy": {
+      "title": "Privacy Protection",
+      "desc": "We strictly protect user data and never misuse or disclose any information"
+    },
+    "innovation": {
+      "title": "Continuous Innovation",
+      "desc": "We constantly explore new technologies to bring users better experiences"
+    }
+  },
+  "team": {
+    "title": "Our Team",
+    "content": "We have a passionate professional team including senior engineers, designers, and product managers. Every member is dedicated to creating the best product experience."
+  },
+  "future": {
+    "title": "Looking Forward",
+    "content": "We will continue to optimize product features, explore more image processing possibilities, and bring users more practical tools and services."
+  },
+  "cta": {
+    "title": "Ready to Get Started?",
+    "button": "Try Now"
+  }
+}

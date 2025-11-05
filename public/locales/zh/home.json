@@ -1,0 +1,56 @@
+{
+  "upload": {
+    "title": "上传图片",
+    "button": "选择图片",
+    "dragHint": "或拖拽图片到此处",
+    "support": "支持 JPG、PNG、WEBP 等格式"
+  },
+  "tools": {
+    "brushSize": "画笔大小",
+    "clearMask": "清除标记",
+    "removeWatermark": "开始去除",
+    "download": "下载结果",
+    "reset": "重新开始"
+  },
+  "tips": {
+    "noImage": "请先上传图片",
+    "noMask": "请先标记要去除的区域",
+    "processing": "处理中，请稍候...",
+    "success": "处理成功！",
+    "error": "处理失败，请重试"
+  },
+  "features": {
+    "title": "功能特点",
+    "aiPowered": {
+      "title": "智能技术",
+      "desc": "采用先进的图像处理技术，智能识别并去除水印"
+    },
+    "easyToUse": {
+      "title": "简单易用",
+      "desc": "无需专业技能，画笔圈选即可快速处理"
+    },
+    "privacy": {
+      "title": "隐私保护",
+      "desc": "图片仅临时处理，不会存储或用于其他用途"
+    },
+    "highQuality": {
+      "title": "高质量输出",
+      "desc": "保持原始图片质量，自然无痕的处理效果"
+    }
+  },
+  "steps": {
+    "title": "使用步骤",
+    "step1": {
+      "title": "上传图片",
+      "desc": "选择或拖拽需要处理的图片"
+    },
+    "step2": {
+      "title": "标记水印",
+      "desc": "用画笔圈选要去除的水印区域"
+    },
+    "step3": {
+      "title": "下载结果",
+      "desc": "点击处理按钮，等待完成后下载"
+    }
+  }
+}

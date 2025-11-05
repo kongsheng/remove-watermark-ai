@@ -1,0 +1,16 @@
+{
+  "title": "Smart Watermark Remover",
+  "subtitle": "Remove watermarks from images quickly and efficiently",
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "footer": {
+    "disclaimer": "Please use this tool in compliance with local laws and platform policies. Only process images you have legal rights to.",
+    "copyright": "© 2024 Smart Watermark Remover. All rights reserved"
+  }
+}
