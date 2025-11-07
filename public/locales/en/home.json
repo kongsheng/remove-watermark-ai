@@ -17,7 +17,8 @@
     "noMask": "Please mark the area to remove first",
     "processing": "Processing, please wait...",
     "success": "Processing successful!",
-    "error": "Processing failed, please try again"
+    "error": "Processing failed, please try again",
+    "hint": "Tip: Use your mouse to mark the watermark area, then click \"Start Removing\""
   },
   "features": {
     "title": "Features",

@@ -18,6 +18,8 @@ export default function WatermarkRemover({ translations }) {
   const inputRef = useRef()
 
   const t = translations.upload
+  const tools = translations.tools
+  const tips = translations.tips
 
   useEffect(() => {
     const c = document.createElement('canvas')
@@ -102,11 +104,11 @@ export default function WatermarkRemover({ translations }) {
 
   const handleRemoveWatermark = async () => {
     if (!img || !maskCanvas) {
-      alert('请先上传图片')
+      alert(tips.noImage)
       return
     }
     if (!hasMask) {
-      alert('请先标记要去除的区域')
+      alert(tips.noMask)
       return
     }
     
@@ -128,7 +130,7 @@ export default function WatermarkRemover({ translations }) {
       })
       
       if (!resp.ok) {
-        alert('处理失败，请重试')
+        alert(tips.error)
         setIsProcessing(false)
         return
       }
@@ -138,20 +140,31 @@ export default function WatermarkRemover({ translations }) {
       const out = new Image()
       out.src = outUrl
       out.onload = () => {
+        // 更新图片
         setImg(out)
         setImgSize({ width: out.width, height: out.height })
+        
+        // 清空mask canvas
         const mctx = maskCanvas.getContext('2d')
         mctx.fillStyle = 'black'
         mctx.fillRect(0, 0, maskCanvas.width, maskCanvas.height)
+        
+        // 清空preview canvas
         if (previewCanvas) {
           const pctx = previewCanvas.getContext('2d')
           pctx.clearRect(0, 0, previewCanvas.width, previewCanvas.height)
         }
+        
         setHasMask(false)
         setIsProcessing(false)
+        
+        // 强制重绘stage
+        if (stageRef.current) {
+          stageRef.current.batchDraw()
+        }
       }
     } catch (error) {
-      alert('处理失败，请重试')
+      alert(tips.error)
       setIsProcessing(false)
     }
   }
@@ -200,7 +213,7 @@ export default function WatermarkRemover({ translations }) {
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div className="flex items-center gap-4">
                 <label className="text-sm font-medium text-gray-600">
-                  画笔大小: {brushSize}px
+                  {tools.brushSize}: {brushSize}px
                 </label>
                 <input 
                   type="range" 
@@ -240,14 +253,14 @@ export default function WatermarkRemover({ translations }) {
                   className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                   disabled={!hasMask || isProcessing}
                 >
-                  清除标记
+                  {tools.clearMask}
                 </button>
                 <button 
                   onClick={handleRemoveWatermark}
                   className="px-6 py-2 bg-[#66000085] text-white rounded-lg hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-opacity font-medium"
                   disabled={!hasMask || isProcessing}
                 >
-                  {isProcessing ? '处理中...' : '开始处理'}
+                  {isProcessing ? tips.processing : tools.removeWatermark}
                 </button>
               </div>
             </div>
@@ -300,18 +313,18 @@ export default function WatermarkRemover({ translations }) {
               className="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 disabled:opacity-50 transition-colors"
               disabled={isProcessing}
             >
-              重新开始
+              {tools.reset}
             </button>
             <button 
               onClick={handleDownload}
               className="px-6 py-2 bg-[#66000085] text-white rounded-lg hover:opacity-90 transition-opacity font-medium"
             >
-              下载图片
+              {tools.download}
             </button>
           </div>
           
           <p className="text-sm text-gray-700 text-center">
-            💡 提示：用鼠标涂抹要去除的水印区域，然后点击"开始处理"
+            💡 {tips.hint}
           </p>
         </div>
       )}

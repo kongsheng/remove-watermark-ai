@@ -18,12 +18,31 @@ export default function ContactPage({ params, common, contact }) {
     e.preventDefault()
     setStatus('sending')
     
-    // 模拟发送
-    setTimeout(() => {
-      setStatus('success')
-      setFormData({ name: '', email: '', subject: '', message: '' })
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setStatus('success')
+        setFormData({ name: '', email: '', subject: '', message: '' })
+        setTimeout(() => setStatus(''), 3000)
+      } else {
+        setStatus('error')
+        console.error('Error:', data.error)
+        setTimeout(() => setStatus(''), 3000)
+      }
+    } catch (error) {
+      setStatus('error')
+      console.error('Error:', error)
       setTimeout(() => setStatus(''), 3000)
-    }, 1000)
+    }
   }
 
   return (
@@ -110,6 +129,12 @@ export default function ContactPage({ params, common, contact }) {
                   {status === 'success' && (
                     <div className="p-4 bg-green-50 text-green-700 rounded-lg text-center">
                       {contact.form.success}
+                    </div>
+                  )}
+
+                  {status === 'error' && (
+                    <div className="p-4 bg-red-50 text-red-700 rounded-lg text-center">
+                      {contact.form.error || 'Failed to send message. Please try again.'}
                     </div>
                   )}
                 </form>
