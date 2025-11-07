@@ -122,7 +122,7 @@ export default function WatermarkRemover({ translations }) {
       form.append('image', imgBlob, 'image.png')
       form.append('mask', maskBlob, 'mask.png')
 
-      // 使用新的API路由（会自动调用Replicate）
+      // 提交任务到队列
       const url = '/api/inpaint'
       const resp = await fetch(url, {
         method: 'POST',
@@ -135,34 +135,78 @@ export default function WatermarkRemover({ translations }) {
         return
       }
       
-      const blob = await resp.blob()
-      const outUrl = URL.createObjectURL(blob)
-      const out = new Image()
-      out.src = outUrl
-      out.onload = () => {
-        // 更新图片
-        setImg(out)
-        setImgSize({ width: out.width, height: out.height })
-        
-        // 清空mask canvas
-        const mctx = maskCanvas.getContext('2d')
-        mctx.fillStyle = 'black'
-        mctx.fillRect(0, 0, maskCanvas.width, maskCanvas.height)
-        
-        // 清空preview canvas
-        if (previewCanvas) {
-          const pctx = previewCanvas.getContext('2d')
-          pctx.clearRect(0, 0, previewCanvas.width, previewCanvas.height)
-        }
-        
-        setHasMask(false)
-        setIsProcessing(false)
-        
-        // 强制重绘stage
-        if (stageRef.current) {
-          stageRef.current.batchDraw()
-        }
+      const data = await resp.json()
+      const taskId = data.task_id
+      
+      // 显示队列位置提示
+      if (data.queue_position > 1) {
+        console.log(`排队中，前面还有 ${data.queue_position - 1} 个任务`)
       }
+      
+      // 轮询任务状态
+      const pollInterval = setInterval(async () => {
+        try {
+          const statusResp = await fetch(`/api/task/${taskId}`)
+          
+          if (statusResp.ok) {
+            const contentType = statusResp.headers.get('content-type')
+            
+            if (contentType && contentType.includes('image')) {
+              // 任务完成，获取到图片
+              clearInterval(pollInterval)
+              
+              const blob = await statusResp.blob()
+              const outUrl = URL.createObjectURL(blob)
+              const out = new Image()
+              out.src = outUrl
+              out.onload = () => {
+                // 更新图片
+                setImg(out)
+                setImgSize({ width: out.width, height: out.height })
+                
+                // 清空mask canvas
+                const mctx = maskCanvas.getContext('2d')
+                mctx.fillStyle = 'black'
+                mctx.fillRect(0, 0, maskCanvas.width, maskCanvas.height)
+                
+                // 清空preview canvas
+                if (previewCanvas) {
+                  const pctx = previewCanvas.getContext('2d')
+                  pctx.clearRect(0, 0, previewCanvas.width, previewCanvas.height)
+                }
+                
+                setHasMask(false)
+                setIsProcessing(false)
+                
+                // 强制重绘stage
+                if (stageRef.current) {
+                  stageRef.current.batchDraw()
+                }
+              }
+            } else {
+              // 还在处理中或排队中
+              const status = await statusResp.json()
+              console.log(status.message || '处理中...')
+            }
+          } else {
+            // 错误
+            clearInterval(pollInterval)
+            alert(tips.error)
+            setIsProcessing(false)
+          }
+        } catch (e) {
+          console.error('轮询错误:', e)
+        }
+      }, 2000) // 每2秒查询一次
+      
+      // 60秒超时保护
+      setTimeout(() => {
+        clearInterval(pollInterval)
+        if (isProcessing) {
+          alert('处理超时，请重试')
+          setIsProcessing(false)
+        }
+      }, 60000)
     } catch (error) {
       alert(tips.error)
       setIsProcessing(false)
