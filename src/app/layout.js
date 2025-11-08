@@ -26,6 +26,8 @@ export default function RootLayout({ children }) {
           gtag('js', new Date());
           gtag('config', 'G-51CNEB57BG');
         `}} />
+        {/* AdSense */}
+        <meta name="google-adsense-account" content="ca-pub-6365736551179454" />
       </head>
       <body>
         {children}
