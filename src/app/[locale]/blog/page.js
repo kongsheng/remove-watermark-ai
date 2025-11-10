@@ -16,7 +16,8 @@ const blogPosts = [
     descZh: '详细介绍5种免费去除照片水印的方法，包括AI工具、Photoshop、手机App等。',
     descEn: 'Detailed guide on 5 free methods to remove watermarks from photos, including AI tools, Photoshop, mobile apps.',
     date: '2025-11-08',
-    category: '教程',
+    categoryZh: '教程',
+    categoryEn: 'Tutorial',
   },
   {
     slug: 'best-free-watermark-removers-2025',
@@ -25,7 +26,8 @@ const blogPosts = [
     descZh: '对比评测10款主流免费去水印工具，帮你找到最适合的解决方案。',
     descEn: 'Compare 10 popular free watermark removal tools to find the best solution for you.',
     date: '2025-11-07',
-    category: '评测',
+    categoryZh: '评测',
+    categoryEn: 'Review',
   },
   {
     slug: 'remove-tiktok-watermark',
@@ -34,7 +36,8 @@ const blogPosts = [
     descZh: '教你快速去除抖音、TikTok视频水印的3种实用方法。',
     descEn: '3 practical methods to quickly remove TikTok video watermarks.',
     date: '2025-11-06',
-    category: '教程',
+    categoryZh: '教程',
+    categoryEn: 'Tutorial',
   },
 ]
 
@@ -63,7 +66,7 @@ export default async function BlogPage({ params }) {
               <article key={post.slug} className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
                 <div className="p-6">
                   <div className="text-sm text-[#66000085] font-semibold mb-2">
-                    {post.category}
+                    {locale === 'zh' ? post.categoryZh : post.categoryEn}
                   </div>
                   <h2 className="text-xl font-bold text-gray-900 mb-3">
                     <Link href={`/${locale}/blog/${post.slug}`} className="hover:text-[#66000085]">
