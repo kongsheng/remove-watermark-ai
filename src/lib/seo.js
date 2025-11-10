@@ -2,9 +2,9 @@
 export const seoConfig = {
   zh: {
     home: {
-      title: '免费在线去水印工具 - AI智能图片去水印 | Smart Watermark Remover',
-      description: '免费在线AI智能去水印工具，支持快速去除图片水印、标记和不需要的元素。简单易用，无需下载，保护隐私。',
-      keywords: '去水印,图片去水印,在线去水印,AI去水印,免费去水印工具,水印移除,图片修复',
+      title: '免费在线去水印工具 - AI智能图片水印去除 | EraseMark',
+      description: '🚀 100%免费AI去水印工具，一键去除图片水印、LOGO、文字标记。支持照片、截图、海报水印去除，无需下载安装，保护隐私安全。智能修复画面，效果自然。',
+      keywords: '去水印,图片去水印,在线去水印,AI去水印,免费去水印工具,照片去水印,截图去水印,水印移除,图片修复,抖音去水印,快手去水印,视频去水印,LOGO去除,文字水印去除,智能去水印',
     },
     about: {
       title: '关于我们 - AI智能去水印工具',
@@ -34,9 +34,9 @@ export const seoConfig = {
   },
   en: {
     home: {
-      title: 'Free Online Watermark Remover - AI Smart Image Watermark Removal',
-      description: 'Free online AI watermark remover tool. Quickly remove watermarks, marks and unwanted elements from images. Easy to use, no download required, privacy protected.',
-      keywords: 'watermark remover,remove watermark,online watermark remover,AI watermark removal,free watermark remover,image editing',
+      title: 'Free AI Watermark Remover - Remove Watermarks from Photos Online | EraseMark',
+      description: '🚀 100% Free AI-powered watermark remover. Instantly remove watermarks, logos, text from photos, screenshots, posters. No download, no signup. Privacy-first, natural results.',
+      keywords: 'watermark remover,remove watermark,online watermark remover,AI watermark removal,free watermark remover,photo watermark remover,remove logo,erase watermark,image editing,watermark eraser,clean images,remove text from image,AI photo editor',
     },
     about: {
       title: 'About Us - AI Smart Watermark Remover',

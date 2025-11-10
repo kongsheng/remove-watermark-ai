@@ -6,27 +6,77 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://erasemark.com/about</loc>
+    <loc>https://erasemark.com/zh</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://erasemark.com/en</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://erasemark.com/zh/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://erasemark.com/contact</loc>
+    <loc>https://erasemark.com/en/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://erasemark.com/faq</loc>
+    <loc>https://erasemark.com/zh/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://erasemark.com/en/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://erasemark.com/zh/faq</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://erasemark.com/privacy</loc>
+    <loc>https://erasemark.com/en/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://erasemark.com/zh/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://erasemark.com/en/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://erasemark.com/zh/blog/how-to-remove-watermark-from-photos</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://erasemark.com/zh/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://erasemark.com/terms</loc>
+    <loc>https://erasemark.com/en/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://erasemark.com/zh/terms</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://erasemark.com/en/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
