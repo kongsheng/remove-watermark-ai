@@ -16,18 +16,23 @@ export function middleware(request) {
     return NextResponse.next()
   }
 
-  // 根路径重定向到默认语言
+  // 根路径重定向到默认语言（使用 308 永久重定向）
   if (pathname === '/') {
-    return NextResponse.redirect(new URL(`/${defaultLocale}`, request.url))
+    const response = NextResponse.redirect(new URL(`/${defaultLocale}`, request.url), 308)
+    // 添加规范链接头
+    response.headers.set('Link', `<https://erasemark.com/${defaultLocale}>; rel="canonical"`)
+    return response
   }
 
-  // 其他路径添加语言前缀
-  return NextResponse.redirect(new URL(`/${defaultLocale}${pathname}`, request.url))
+  // 其他路径添加语言前缀（使用 308 永久重定向）
+  const response = NextResponse.redirect(new URL(`/${defaultLocale}${pathname}`, request.url), 308)
+  response.headers.set('Link', `<https://erasemark.com/${defaultLocale}${pathname}>; rel="canonical"`)
+  return response
 }
 
 export const config = {
   matcher: [
     // 跳过所有内部路径 (_next)、API路由、静态文件
-    '/((?!_next|api|favicon.ico|.*\\..*).*)',
+    '/((?!_next|api|favicon.ico|robots.txt|sitemap.xml|.*\\..*).*)',
   ],
 }

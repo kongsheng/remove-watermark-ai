@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://yoursite.com'
+  const baseUrl = 'https://erasemark.com'
   
   const routes = ['', '/about', '/faq', '/contact', '/privacy', '/terms']
   const locales = ['zh', 'en']
@@ -13,6 +13,12 @@ export default function sitemap() {
         lastModified: new Date(),
         changeFrequency: route === '' ? 'daily' : 'weekly',
         priority: route === '' ? 1.0 : 0.8,
+        alternates: {
+          languages: {
+            'zh': `${baseUrl}/zh${route}`,
+            'en': `${baseUrl}/en${route}`,
+          },
+        },
       })
     })
   })

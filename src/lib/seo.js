@@ -68,7 +68,7 @@ export const seoConfig = {
 
 export function generateMetadata(locale, page) {
   const config = seoConfig[locale]?.[page] || seoConfig.zh[page]
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://yoursite.com'
+  const baseUrl = 'https://erasemark.com'
   
   return {
     title: config.title,
@@ -78,7 +78,7 @@ export function generateMetadata(locale, page) {
       title: config.title,
       description: config.description,
       url: `${baseUrl}/${locale}${page === 'home' ? '' : '/' + page}`,
-      siteName: 'Smart Watermark Remover',
+      siteName: 'EraseMark',
       locale: locale === 'zh' ? 'zh_CN' : 'en_US',
       type: 'website',
       images: [
