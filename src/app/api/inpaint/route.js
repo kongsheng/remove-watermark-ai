@@ -19,12 +19,21 @@ export async function POST(request) {
     console.log('Starting watermark removal with backend...')
     console.log('Backend URL:', BACKEND_URL)
 
-    // 创建新的 FormData 发送到后端
-    const backendFormData = new FormData()
-    backendFormData.append('image', image)
-    backendFormData.append('mask', mask)
+    // 将文件转换为 Buffer 或 Blob
+    const imageBuffer = Buffer.from(await image.arrayBuffer())
+    const maskBuffer = Buffer.from(await mask.arrayBuffer())
 
-    // 调用后端 API
+    // 创建 FormData（使用 form-data 包或原生 FormData）
+    const backendFormData = new FormData()
+    
+    // 创建 Blob 对象并添加到 FormData
+    const imageBlob = new Blob([imageBuffer], { type: image.type || 'image/png' })
+    const maskBlob = new Blob([maskBuffer], { type: mask.type || 'image/png' })
+    
+    backendFormData.append('image', imageBlob, image.name || 'image.png')
+    backendFormData.append('mask', maskBlob, mask.name || 'mask.png')
+
+    // 调用后端 API 提交任务
     const response = await fetch(`${BACKEND_URL}/api/inpaint`, {
       method: 'POST',
       body: backendFormData,
@@ -36,16 +45,13 @@ export async function POST(request) {
       throw new Error(`Backend error: ${response.status} - ${errorText}`)
     }
 
-    console.log('Got result from backend')
+    // 后端返回任务ID和队列信息
+    const data = await response.json()
+    console.log('Task submitted:', data)
 
-    // 直接返回处理后的图片
-    const resultBlob = await response.blob()
+    // 返回任务信息给前端，让前端轮询
+    return NextResponse.json(data)
     
-    return new NextResponse(resultBlob, {
-      headers: {
-        'Content-Type': 'image/png',
-      },
-    })
   } catch (error) {
     console.error('API error:', error)
     return NextResponse.json(
