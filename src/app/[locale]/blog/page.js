@@ -39,6 +39,36 @@ const blogPosts = [
     categoryZh: '教程',
     categoryEn: 'Tutorial',
   },
+  {
+    slug: 'ai-watermark-removal-technology',
+    titleZh: 'AI去水印技术原理：深度学习如何修复图片',
+    titleEn: 'AI Watermark Removal Technology: How Deep Learning Repairs Images',
+    descZh: '深入了解AI去水印技术的工作原理，包括LaMa模型、图像修复算法等。',
+    descEn: 'Deep dive into AI watermark removal technology, including LaMa model and image inpainting algorithms.',
+    date: '2025-11-05',
+    categoryZh: '技术',
+    categoryEn: 'Technology',
+  },
+  {
+    slug: 'remove-watermark-from-screenshots',
+    titleZh: '如何去除截图水印？文档、网页、App截图去水印教程',
+    titleEn: 'How to Remove Watermarks from Screenshots? Complete Guide',
+    descZh: '详细教程：去除文档截图、网页截图、App截图上的水印。',
+    descEn: 'Complete tutorial on removing watermarks from document, web, and app screenshots.',
+    date: '2025-11-04',
+    categoryZh: '教程',
+    categoryEn: 'Tutorial',
+  },
+  {
+    slug: 'watermark-removal-tips-and-tricks',
+    titleZh: '去水印高级技巧：如何获得最佳效果',
+    titleEn: 'Advanced Watermark Removal Tips: How to Get Best Results',
+    descZh: '分享专业的去水印技巧，帮你处理复杂水印，获得完美效果。',
+    descEn: 'Professional tips for handling complex watermarks and achieving perfect results.',
+    date: '2025-11-03',
+    categoryZh: '技巧',
+    categoryEn: 'Tips',
+  },
 ]
 
 export default async function BlogPage({ params }) {
@@ -48,14 +78,14 @@ export default async function BlogPage({ params }) {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Header locale={locale} translations={common} />
-      
+
       <main className="flex-1">
         <div className="max-w-7xl mx-auto px-4 py-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             {locale === 'zh' ? '去水印教程与技巧' : 'Watermark Removal Tutorials & Tips'}
           </h1>
           <p className="text-xl text-gray-600 mb-12">
-            {locale === 'zh' 
+            {locale === 'zh'
               ? '学习如何使用AI工具去除图片水印，获取专业的去水印教程、技巧和最佳实践。'
               : 'Learn how to remove watermarks from images using AI tools, get professional tutorials, tips and best practices.'
             }
@@ -78,7 +108,7 @@ export default async function BlogPage({ params }) {
                   </p>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-500">{post.date}</span>
-                    <Link 
+                    <Link
                       href={`/${locale}/blog/${post.slug}`}
                       className="text-[#66000085] font-semibold hover:underline"
                     >
@@ -135,7 +165,7 @@ export default async function BlogPage({ params }) {
           </section>
         </div>
       </main>
-      
+
       <Footer translations={common} />
     </div>
   )
