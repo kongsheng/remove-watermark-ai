@@ -9,7 +9,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   // 注意：请替换为你的Google Analytics测量ID
   const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-XXXXXXXXXX'
-  
+
   return (
     <html>
       <head>
@@ -20,14 +20,17 @@ export default function RootLayout({ children }) {
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-51CNEB57BG"></script>
-        <script dangerouslySetInnerHTML={{__html: `
+        <script dangerouslySetInnerHTML={{
+          __html: `
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-51CNEB57BG');
         `}} />
-        {/* AdSense */}
+        {/* AdSense - 审核通过后再启用
         <meta name="google-adsense-account" content="ca-pub-6365736551179454" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6365736551179454" crossOrigin="anonymous"></script>
+        */}
       </head>
       <body>
         {children}

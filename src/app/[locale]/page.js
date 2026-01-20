@@ -3,6 +3,7 @@ import { generateMetadata as genMeta } from '@/lib/seo'
 import { generateWebsiteSchema, generateOrganizationSchema, generateSoftwareAppSchema } from '@/lib/schema'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Link from 'next/link'
 import dynamic from 'next/dynamic'
 
 // 动态导入 WatermarkRemover，禁用 SSR
@@ -17,11 +18,11 @@ export async function generateMetadata({ params }) {
 
 export default async function Home({ params }) {
   const { locale } = params
-  
+
   // 获取翻译
   const common = await getTranslations(locale, 'common')
   const home = await getTranslations(locale, 'home')
-  
+
   const t = createTranslator({ common, home })
 
   // 生成结构化数据
@@ -44,14 +45,14 @@ export default async function Home({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(appSchema) }}
       />
-      
+
       <Header locale={locale} translations={common} />
-      
+
       <main className="flex-1">
         <div className="max-w-7xl mx-auto px-4 py-8">
           {/* 水印去除工具 */}
           <WatermarkRemover translations={home} />
-          
+
           {/* 功能特点 */}
           <section className="mt-16">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
@@ -109,7 +110,7 @@ export default async function Home({ params }) {
               </h2>
               <div className="text-gray-600 space-y-4">
                 <p>
-                  {locale === 'zh' 
+                  {locale === 'zh'
                     ? 'EraseMark 是一款基于先进 AI 技术的免费在线去水印工具，能够智能识别并去除图片、照片、截图中的水印、LOGO、文字标记等不需要的元素。我们采用 LaMa（Large Mask Inpainting）深度学习模型，确保去除水印后的图片效果自然，无痕迹。'
                     : 'EraseMark is a free online AI-powered watermark remover that intelligently identifies and removes watermarks, logos, text marks from images, photos, and screenshots. We use LaMa (Large Mask Inpainting) deep learning model to ensure natural, seamless results after watermark removal.'
                   }
@@ -138,9 +139,60 @@ export default async function Home({ params }) {
               </div>
             </div>
           </section>
+
+          {/* 博客文章推荐 */}
+          <section className="mt-16">
+            <div className="flex justify-between items-center mb-8">
+              <h2 className="text-3xl font-bold text-gray-900">
+                {locale === 'zh' ? '📚 去水印教程与技巧' : '📚 Tutorials & Tips'}
+              </h2>
+              <Link
+                href={`/${locale}/blog`}
+                className="text-[#66000085] font-semibold hover:underline"
+              >
+                {locale === 'zh' ? '查看全部 →' : 'View All →'}
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                {
+                  slug: 'mobile-app-watermark-removal-guide',
+                  titleZh: '手机去水印App完整教程',
+                  titleEn: 'Mobile Watermark Removal Apps Guide',
+                  emoji: '📱'
+                },
+                {
+                  slug: 'photoshop-vs-ai-watermark-removal',
+                  titleZh: 'Photoshop vs AI去水印对比',
+                  titleEn: 'Photoshop vs AI Comparison',
+                  emoji: '⚖️'
+                },
+                {
+                  slug: 'batch-watermark-removal-guide',
+                  titleZh: '批量去水印指南',
+                  titleEn: 'Batch Watermark Removal Guide',
+                  emoji: '📦'
+                }
+              ].map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/${locale}/blog/${post.slug}`}
+                  className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div className="text-4xl mb-3">{post.emoji}</div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    {locale === 'zh' ? post.titleZh : post.titleEn}
+                  </h3>
+                  <span className="text-[#66000085] text-sm font-medium">
+                    {locale === 'zh' ? '阅读更多 →' : 'Read More →'}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </section>
         </div>
       </main>
-      
+
       <Footer translations={common} />
     </div>
   )

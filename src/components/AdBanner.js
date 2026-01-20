@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 
-export default function AdBanner({ 
+export default function AdBanner({
   adSlot = '1234567890',
   adFormat = 'auto',
   fullWidthResponsive = true,
@@ -24,7 +24,7 @@ export default function AdBanner({
       <ins
         className="adsbygoogle"
         style={{ display: 'block', ...style }}
-        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+        data-ad-client="ca-pub-6365736551179454"
         data-ad-slot={adSlot}
         data-ad-format={adFormat}
         data-full-width-responsive={fullWidthResponsive ? 'true' : 'false'}

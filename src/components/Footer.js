@@ -9,15 +9,27 @@ export default function Footer({ translations }) {
             {translations.footer.disclaimer}
           </p>
           <div className="flex justify-center gap-4 text-sm text-gray-600 mb-4 flex-wrap">
-            <Link href="/privacy" className="hover:text-[#6003] transition-colors">
+            <Link href="/blog" className="hover:text-[#66000085] transition-colors">
+              {translations.nav.blog || 'Blog'}
+            </Link>
+            <span>•</span>
+            <Link href="/about" className="hover:text-[#66000085] transition-colors">
+              {translations.nav.about}
+            </Link>
+            <span>•</span>
+            <Link href="/faq" className="hover:text-[#66000085] transition-colors">
+              {translations.nav.faq}
+            </Link>
+            <span>•</span>
+            <Link href="/privacy" className="hover:text-[#66000085] transition-colors">
               {translations.nav.privacy}
             </Link>
             <span>•</span>
-            <Link href="/terms" className="hover:text-[#6003] transition-colors">
+            <Link href="/terms" className="hover:text-[#66000085] transition-colors">
               {translations.nav.terms}
             </Link>
             <span>•</span>
-            <Link href="/contact" className="hover:text-[#6003] transition-colors">
+            <Link href="/contact" className="hover:text-[#66000085] transition-colors">
               {translations.nav.contact}
             </Link>
           </div>

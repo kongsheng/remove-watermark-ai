@@ -41,13 +41,12 @@ export default function Header({ locale, translations }) {
             <div className="flex gap-5">
               {[
                 { href: `/${locale}`, label: translations.nav.home, key: 'home' },
+                { href: `/${locale}/blog`, label: translations.nav.blog || (locale === 'zh' ? '博客' : 'Blog'), key: 'blog' },
                 { href: `/${locale}/about`, label: translations.nav.about, key: 'about' },
                 { href: `/${locale}/faq`, label: translations.nav.faq, key: 'faq' },
                 { href: `/${locale}/contact`, label: translations.nav.contact, key: 'contact' },
-                { href: `/${locale}/privacy`, label: translations.nav.privacy, key: 'privacy' },
-                { href: `/${locale}/terms`, label: translations.nav.terms, key: 'terms' },
               ].map(({ href, label, key }) => (
-                <Link 
+                <Link
                   key={key}
                   href={href}
                   className="text-sm font-medium text-gray-600 hover:text-[#66000085] transition-colors"
