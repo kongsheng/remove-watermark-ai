@@ -156,22 +156,22 @@ export default async function Home({ params }) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 {
-                  slug: 'mobile-app-watermark-removal-guide',
-                  titleZh: '手机去水印App完整教程',
-                  titleEn: 'Mobile Watermark Removal Apps Guide',
-                  emoji: '📱'
+                  slug: 'ai-watermark-removal-technology',
+                  titleZh: 'AI去水印技术原理',
+                  titleEn: 'AI Watermark Removal Technology',
+                  emoji: '🤖'
                 },
                 {
-                  slug: 'photoshop-vs-ai-watermark-removal',
-                  titleZh: 'Photoshop vs AI去水印对比',
-                  titleEn: 'Photoshop vs AI Comparison',
-                  emoji: '⚖️'
+                  slug: 'watermark-removal-tips-and-tricks',
+                  titleZh: '去水印高级技巧',
+                  titleEn: 'Advanced Tips & Tricks',
+                  emoji: '💡'
                 },
                 {
-                  slug: 'batch-watermark-removal-guide',
-                  titleZh: '批量去水印指南',
-                  titleEn: 'Batch Watermark Removal Guide',
-                  emoji: '📦'
+                  slug: 'how-to-remove-video-watermarks',
+                  titleZh: '如何去除视频水印',
+                  titleEn: 'How to Remove Video Watermarks',
+                  emoji: '🎬'
                 }
               ].map((post) => (
                 <Link
