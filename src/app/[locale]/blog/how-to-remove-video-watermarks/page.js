@@ -224,7 +224,7 @@ export default async function BlogPostPage({ params }) {
                                                 <td className="border border-gray-300 px-4 py-2">最快最简单</td>
                                             </tr>
                                             <tr>
-                                                <td className="border border-gray-300 px-4 py-2">短视频（<5分钟）</td>
+                                                <td className="border border-gray-300 px-4 py-2">短视频（&lt;5分钟）</td>
                                                 <td className="border border-gray-300 px-4 py-2 font-semibold">在线工具</td>
                                                 <td className="border border-gray-300 px-4 py-2">无需安装软件</td>
                                             </tr>
